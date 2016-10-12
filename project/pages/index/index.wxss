@@ -16,6 +16,10 @@
     color: #aaa;
 }
 
-.usermotto {
+.user-times {
+    margin-bottom: 20px;
+}
+
+.button-container {
     margin-top: 200px;
 }

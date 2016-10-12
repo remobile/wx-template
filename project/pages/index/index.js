@@ -1,41 +1,65 @@
-//index.js
-//获取应用实例
-var app = getApp()
-Page({
+var app = getApp();
+app.Page({
     data: {
-        motto: 'Hello World',
+        times: 0,
         userInfo: {}
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
+    showLogs() {
+        app.navigator.push({
+            url: '../logs/logs',
         })
     },
-    onLoad: function () {
-        console.log('onLoad index')
-        var that = this
-        //调用应用实例的方法获取全局数据
-        app.getUserInfo(function(userInfo){
-            //更新数据
-            that.setData({
+    showSettings() {
+        app.navigator.push({
+            url: '../settings/main',
+            passProps: {
+                list: [1,2,3],
+            }
+        });
+    },
+    updateShowLogTimes() {
+        const times = this.data.times+1;
+        this.setData({
+            times,
+        });
+    },
+    getUserInfo(callback){
+        if (app.data.userInfo) {
+            callback(app.data.userInfo);
+        } else {
+            wx.login({
+                success: ()=>{
+                    wx.getUserInfo({
+                        success:  (res)=>{
+                            app.data.userInfo = res.userInfo
+                            callback(app.data.userInfo);
+                        }
+                    })
+                }
+            })
+        }
+    },
+    onLoad() {
+        console.log('onLoad index');
+        this.getUserInfo((userInfo)=>{
+            this.setData({
                 userInfo:userInfo
             })
         })
     },
-    onReady: function() {
+    onReady() {
         console.log('onReady index')
     },
-    onShow: function() {
+    onShow() {
         console.log('onShow index')
     },
-    onHide: function() {
+    onHide() {
         console.log('onHide index')
     },
-    onUnload: function() {
+    onUnload() {
         console.log('onUnload index')
     },
-    onPullDownRefresh: function() {
+    onPullDownRefresh() {
         console.log('onPullDownRefresh index')
     },
 })

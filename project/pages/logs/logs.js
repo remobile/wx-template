@@ -1,30 +1,30 @@
-//logs.js
+var app = getApp();
 var util = require('../../utils/util.js')
-Page({
+app.Page({
     data: {
         logs: []
     },
-    onLoad: function () {
-        console.log('onLoad log')
+    onLoad: function (options) {
         this.setData({
             logs: (wx.getStorageSync('logs') || []).map(function (log) {
                 return util.formatTime(new Date(log))
             })
-        })
+        });
     },
-    onReady: function() {
+    onReady() {
         console.log('onReady log')
+        app.navigator.getParentRoute().updateShowLogTimes();
     },
-    onShow: function() {
+    onShow() {
         console.log('onShow log')
     },
-    onHide: function() {
+    onHide() {
         console.log('onHide log')
     },
-    onUnload: function() {
+    onUnload() {
         console.log('onUnload log')
     },
-    onPullDownRefresh: function() {
+    onPullDownRefresh() {
         console.log('onPullDownRefresh log')
     },
 })
