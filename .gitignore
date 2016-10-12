@@ -1,0 +1,10 @@
+*.[aod]
+*.DS_Store
+.DS_Store
+*Thumbs.db
+.flowconfig
+.watchmanconfig
+/**/npm-debug.log
+/**/.svn
+/tools/node
+*.idea
