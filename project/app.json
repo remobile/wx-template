@@ -11,7 +11,7 @@
         "navigationBarTitleText": "糗事百科",
         "backgroundColor": "white",
         "backgroundTextStyle": "dark",
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": false
     },
     "tabBar": {
         "color": "#FFFFFF",
