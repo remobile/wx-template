@@ -1,3 +1,16 @@
-<view class="container">
-    <text class="user-times">这是联系人界面</text>
+<view class="list">
+    <block wx:for="{{list}}" wx:for-item="item">
+        <view class="item">
+            <view class="autorContainer">
+                <image class="avatar" src="{{item.avatar}}" background-size="cover"></image>
+                <text class="author">{{item.author}}</text>
+            </view>
+            <text class="content">{{item.content}}</text>
+            <image class="image" src="{{item.image}}" background-size="cover"></image>
+            <view class="statusContainer">
+                <text class="status">好笑 {{item.likes}}   评论 {{item.comments}}    分享 {{item.shares}}</text>
+            </view>
+        </view>
+        <view class="sperator" />
+    </block>
 </view>
