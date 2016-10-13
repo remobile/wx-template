@@ -1,34 +1,47 @@
 {
     "pages": [
-        "pages/index/index",
-        "pages/logs/logs",
-        "pages/settings/main"
+        "modules/home/text",
+        "modules/home/image",
+        "modules/home/video",
+        "modules/home/personal"
     ],
     "window": {
         "navigationBarBackgroundColor": "#000000",
         "navigationBarTextStyle": "white",
-        "navigationBarTitleText": "测试",
+        "navigationBarTitleText": "糗事百科",
         "backgroundColor": "white",
         "backgroundTextStyle": "dark",
         "enablePullDownRefresh": true
     },
     "tabBar": {
-        "color": "red",
-        "selectedColor": "blue",
-        "backgroundColor": "gray",
-        "borderStyle": "black",
+        "color": "#FFFFFF",
+        "selectedColor": "#B18F50",
+        "backgroundColor": "#CACACA",
+        "borderStyle": "#FFFFFF",
         "list": [
             {
-                "pagePath": "pages/index/index",
-                "text": "首页",
+                "pagePath": "modules/home/text",
+                "text": "文字",
                 "iconPath": "resource/images/icons/home.png",
                 "selectedIconPath": "resource/images/icons/home_press.png"
             },
             {
-                "pagePath": "pages/logs/logs",
-                "text": "日志",
+                "pagePath": "modules/home/image",
+                "text": "图片",
                 "iconPath": "resource/images/icons/train.png",
                 "selectedIconPath": "resource/images/icons/train_press.png"
+            },
+            {
+                "pagePath": "modules/home/video",
+                "text": "视频",
+                "iconPath": "resource/images/icons/actual.png",
+                "selectedIconPath": "resource/images/icons/actual_press.png"
+            },
+            {
+                "pagePath": "modules/home/personal",
+                "text": "我",
+                "iconPath": "resource/images/icons/learn.png",
+                "selectedIconPath": "resource/images/icons/learn_press.png"
             }
         ]
     },

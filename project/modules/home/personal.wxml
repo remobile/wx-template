@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="infoContainer">
+        <image class="avatar" src="{{avatar}}" background-size="cover"></image>
+        <view class="row"><text class="label">姓名：</text><text class="text">{{username}}</text></view>
+        <view class="row"><text class="label">性别：</text><text class="text">{{sex}}</text></view>
+        <view class="row"><text class="label">城市：</text><text class="text">{{address}}</text></view>
+    </view>
+</view>
