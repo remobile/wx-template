@@ -1,8 +1,8 @@
 {
     "pages": [
+        "modules/home/hot",
+        "modules/home/text",
         "modules/home/image",
-        "modules/home/image",
-        "modules/home/video",
         "modules/home/personal"
     ],
     "window": {
@@ -20,20 +20,20 @@
         "borderStyle": "#FFFFFF",
         "list": [
             {
-                "pagePath": "modules/home/text",
-                "text": "文字",
+                "pagePath": "modules/home/hot",
+                "text": "热门",
                 "iconPath": "resource/images/icons/home.png",
                 "selectedIconPath": "resource/images/icons/home_press.png"
             },
             {
-                "pagePath": "modules/home/image",
-                "text": "图片",
+                "pagePath": "modules/home/text",
+                "text": "纯文",
                 "iconPath": "resource/images/icons/train.png",
                 "selectedIconPath": "resource/images/icons/train_press.png"
             },
             {
-                "pagePath": "modules/home/video",
-                "text": "视频",
+                "pagePath": "modules/home/image",
+                "text": "图片",
                 "iconPath": "resource/images/icons/actual.png",
                 "selectedIconPath": "resource/images/icons/actual_press.png"
             },
