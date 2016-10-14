@@ -18,6 +18,15 @@ Page({
     pullUpLoad: function (e) {
         this.getList();
     },
+    onRowClick(e) {
+        var {id} = e.currentTarget.dataset;
+        app.navigator.push({
+            url: './detail',
+            passProps: {
+                id
+            }
+        });
+    },
     getList() {
         if (!this.data.loading) {
             const param = {type: 'hot', page: ++this.page};

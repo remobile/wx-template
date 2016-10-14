@@ -3,6 +3,7 @@
         "modules/home/hot",
         "modules/home/text",
         "modules/home/image",
+        "modules/home/detail",
         "modules/home/personal"
     ],
     "window": {

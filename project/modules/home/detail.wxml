@@ -1,0 +1,3 @@
+<view class="autorContainer">
+    <text class="author">这是详情{{id}}</text>
+</view>

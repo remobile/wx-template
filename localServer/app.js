@@ -25,9 +25,11 @@ function getContent(type, page, callback) {
             $("#content-left").find(".article").each(function() {
                 var item = {};
                 var authorImg = $(this).find('.author img');
+                var content =  $(this).find('.contentHerf');
                 item.avatar = authorImg.attr('src');
                 item.author = authorImg.attr('alt');
-                item.content =  $(this).find('.content span').html();
+                item.content =  content.find('span').html();
+                item.id =  content.attr('href').replace(/.*\//, '');
                 item.likes =  $(this).find('.stats-vote .number').html();
                 item.comments =  $(this).find('.qiushi_comments .number').html();
                 item.image =  $(this).find('.thumb img').attr('src');
