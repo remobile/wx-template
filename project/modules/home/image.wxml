@@ -1,4 +1,7 @@
-<view class="list">
+<loading hidden="{{!loading}}">
+  加载中...
+</loading>
+<scroll-view class="list" style="height: {{windowHeight}}px; width: {{windowWidth}}px; " scroll-y="true" bindscrolltolower="pullUpLoad" lower-threshold="800">
     <block wx:for="{{list}}" wx:for-item="item">
         <view class="item">
             <view class="autorContainer">
@@ -13,4 +16,4 @@
         </view>
         <view class="sperator" />
     </block>
-</view>
+</scroll-view>

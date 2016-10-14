@@ -30,6 +30,7 @@ function getContent(type, page, callback) {
                 item.content =  $(this).find('.content span').html();
                 item.likes =  $(this).find('.stats-vote .number').html();
                 item.comments =  $(this).find('.qiushi_comments .number').html();
+                item.image =  $(this).find('.thumb img').attr('src');
                 list.push(item);
             });
             callback(list);
