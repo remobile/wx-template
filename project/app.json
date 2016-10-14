@@ -1,7 +1,7 @@
 {
     "pages": [
         "modules/home/image",
-        "modules/home/image",
+        "modules/home/text",
         "modules/home/video",
         "modules/home/personal"
     ],

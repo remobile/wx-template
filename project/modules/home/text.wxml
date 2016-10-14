@@ -7,7 +7,7 @@
             </view>
             <text class="content">{{item.content}}</text>
             <view class="statusContainer">
-                <text class="status">好笑 {{item.likes}}   评论 {{item.comments}}    分享 {{item.shares}}</text>
+                <text class="status">好笑 {{item.likes}} · 评论 {{item.comments}} · 分享 {{item.shares}}</text>
             </view>
         </view>
         <view class="sperator" />

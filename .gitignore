@@ -8,3 +8,4 @@
 /**/.svn
 /tools/node
 *.idea
+node_modules
