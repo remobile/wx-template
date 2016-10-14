@@ -1,4 +1,5 @@
 const PersonalMgr = require('./manager/PersonalMgr.js');
+const GET = require('./utils/net/get.js');
 
 App({
     data: {},
@@ -40,7 +41,20 @@ App({
             return this.routeStack[this.routeStack.length-1-i];
         },
     },
+    GET: GET,
+    showWait() {
+    },
+    hideWait() {
+    },
+    Toast(msg) {
+        console.log(msg);
+    },
+    personal:new PersonalMgr(),
     onLaunch() {
-        this.personal = new PersonalMgr();
+        wx.getSystemInfo({
+            success: (res) => {
+                this.system = res;
+            }
+        })
     },
 })
