@@ -1,18 +1,8 @@
+<import src="content.wxml"/>
 <loading hidden="{{!loading}}">
   加载中...
 </loading>
-<view class="item">
-    <view class="autorContainer">
-        <image class="avatar" src="{{avatar}}" background-size="cover"></image>
-        <text class="author">{{author}}</text>
-    </view>
-    <text class="content">{{content}}</text>
-    <image class="image" src="{{image}}" background-size="cover"  wx:if="{{!!item.image}}"></image>
-    <view class="statusContainer">
-        <text class="status">好笑 {{likes}} · 评论 {{comments}}</text>
-    </view>
-</view>
-<view class="sperator" />
+<template is="content" data="{{item: item}}"/>
 <view class="commentList">
     <block wx:for="{{comments_list}}" wx:for-item="item">
         <view class="commentItem">

@@ -23,7 +23,7 @@ Page({
         app.navigator.push({
             url: './detail',
             passProps: {
-                data: this.data.list[index],
+                item: this.data.list[index],
             }
         });
     },

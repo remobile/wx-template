@@ -1,0 +1,42 @@
+.item {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+.autorContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.avatar {
+    width: 96rpx;
+    height: 96rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+.author {
+    font-size: 18rpx;
+    color: #AAAAAA;
+}
+.content {
+    font-size: 30rpx;
+    color: #878787;
+}
+.image {
+    margin-top: 20rpx;
+    width: 100%;
+}
+.statusContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30rpx;
+}
+.status {
+    font-size: 14rpx;
+    color: #AAAAAA;
+}
+.sperator {
+    height: 20rpx;
+    background-color: #E5E5E5;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}

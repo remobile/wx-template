@@ -4,13 +4,12 @@ app.Page({
         comments_list: [],
     },
     onLoad() {
-        const {author, avatar, content, image, likes, comments} = this.props.data;
-        this.setData({author, avatar, content, image, likes, comments});
+        this.setData({item: this.props.item});
         this.getCommmetList();
     },
     getCommmetList() {
         if (!this.data.loading) {
-            const param = {id: this.props.data.id};
+            const param = {id: this.props.item.id};
             app.GET('http://localhost:3000/getCommentList', param, (list)=>{
                 this.setData({comments_list: this.data.comments_list.concat(list)})
             }, this);

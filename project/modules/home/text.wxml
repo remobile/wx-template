@@ -1,18 +1,9 @@
+<import src="content.wxml"/>
 <loading hidden="{{!loading}}">
   加载中...
 </loading>
 <scroll-view class="list" style="height: {{windowHeight}}px; width: {{windowWidth}}px; " scroll-y="true" bindscrolltolower="pullUpLoad" lower-threshold="200">
     <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="onRowClick" data-index="{{index}}">
-        <view class="item">
-            <view class="autorContainer">
-                <image class="avatar" src="{{item.avatar}}" background-size="cover"></image>
-                <text class="author">{{item.author}}</text>
-            </view>
-            <text class="content">{{item.content}}</text>
-            <view class="statusContainer">
-                <text class="status">好笑 {{item.likes}} · 评论 {{item.comments}}</text>
-            </view>
-        </view>
-        <view class="sperator" />
+        <template is="content" data="{{item: item}}"/>
     </navigator>
 </scroll-view>
