@@ -9,7 +9,7 @@
                 <text class="author">{{item.author}}</text>
             </view>
             <text class="content">{{item.content}}</text>
-            <image class="image" src="{{item.image}}" style="display:{{item.image?'block':'none'}}" background-size="cover"></image>
+            <image class="image" src="{{item.image}}" background-size="cover" wx:if="{{!!item.image}}"></image>
             <view class="statusContainer">
                 <text class="status">好笑 {{item.likes}} · 评论 {{item.comments}}</text>
             </view>
