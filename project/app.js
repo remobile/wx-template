@@ -3,19 +3,29 @@ const GET = require('./utils/net/get.js');
 
 App({
     data: {},
-    Page(options) {
-        const {onLoad, onUnload} = options;
-        options.onLoad = function() {
-            var app = getApp();
-            this.props = app.passProps;
-            app.navigator.routeStack.push(this);
-            onLoad && onLoad.bind(this)();
-        };
-        options.onUnload = function() {
-            var app = getApp();
-            onUnload && onUnload.bind(this)();
-            app.navigator.routeStack.pop();
-        };
+    GET: GET,
+    personal:new PersonalMgr(),
+    Page(...params) {
+        let data = {};
+        let options = {};
+        params.forEach((v)=>{
+            Object.assign(options, v);
+            Object.assign(data, v.data);
+        });
+        if (!options.fromTabBar) {
+            const {onLoad, onUnload} = options;
+            options.onLoad = function() {
+                var app = getApp();
+                this.props = app.passProps;
+                app.navigator.routeStack.push(this);
+                onLoad && onLoad.bind(this)();
+            };
+            options.onUnload = function() {
+                var app = getApp();
+                onUnload && onUnload.bind(this)();
+                app.navigator.routeStack.pop();
+            };
+        }
         return Page(options);
     },
     navigator: {
@@ -41,15 +51,9 @@ App({
             return this.routeStack[this.routeStack.length-1-i];
         },
     },
-    GET: GET,
-    showWait() {
-    },
-    hideWait() {
-    },
     Toast(msg) {
         console.log(msg);
     },
-    personal:new PersonalMgr(),
     onLaunch() {
         wx.getSystemInfo({
             success: (res) => {

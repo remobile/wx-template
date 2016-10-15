@@ -1,2 +1,3 @@
+var app = getApp();
 var list = require('components/list.js');
-Page(list('imgrank'))
+app.Page({fromTabBar: true}, list('imgrank'));
