@@ -1,2 +1,3 @@
 <import src="components/list.wxml"/>
 <template is="list" data="{{list: list}}"/>
+<include src="../../components/waiting.wxml">
