@@ -1,9 +1,1 @@
-<import src="content.wxml"/>
-<loading hidden="{{!loading}}">
-  加载中...
-</loading>
-<scroll-view class="list" style="height: {{windowHeight}}px; width: {{windowWidth}}px; " scroll-y="true" bindscrolltolower="pullUpLoad" lower-threshold="200">
-    <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="onRowClick" data-index="{{index}}">
-        <template is="content" data="{{item: item}}"/>
-    </navigator>
-</scroll-view>
+<include src="components/list.wxml"/>

@@ -1,10 +1,4 @@
-@import "content.wxss";
-.sperator {
-    height: 20rpx;
-    background-color: #E5E5E5;
-    margin-top: 20rpx;
-    margin-bottom: 20rpx;
-}
+@import "components/content.wxss";
 .commentList {
     display: flex;
     flex-direction: column;

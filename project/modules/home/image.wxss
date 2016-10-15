@@ -1,5 +1,1 @@
-@import "content.wxss";
-.list {
-    display: flex;
-    flex-direction: column;
-}
+@import "components/list.wxss";

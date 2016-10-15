@@ -1,4 +1,4 @@
-<import src="content.wxml"/>
+<import src="components/content.wxml"/>
 <loading hidden="{{!loading}}">
   加载中...
 </loading>
