@@ -2,7 +2,7 @@
   加载中...
 </loading>
 <scroll-view class="list" style="height: {{windowHeight}}px; width: {{windowWidth}}px; " scroll-y="true" bindscrolltolower="pullUpLoad" lower-threshold="200">
-    <block wx:for="{{list}}" wx:for-item="item">
+    <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="onRowClick" data-index="{{index}}">
         <view class="item">
             <view class="autorContainer">
                 <image class="avatar" src="{{item.avatar}}" background-size="cover"></image>
@@ -14,5 +14,5 @@
             </view>
         </view>
         <view class="sperator" />
-    </block>
+    </navigator>
 </scroll-view>

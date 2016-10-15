@@ -19,19 +19,19 @@ Page({
         this.getList();
     },
     onRowClick(e) {
-        var {id} = e.currentTarget.dataset;
+        var {index} = e.currentTarget.dataset;
         app.navigator.push({
             url: './detail',
             passProps: {
-                id
+                data: this.data.list[index],
             }
         });
     },
     getList() {
         if (!this.data.loading) {
             const param = {type: 'hot', page: ++this.page};
-            app.GET('http://localhost:3000/getList', param, (data)=>{
-                this.setData({list: this.data.list.concat(data.list)})
+            app.GET('http://localhost:3000/getList', param, (list)=>{
+                this.setData({list: this.data.list.concat(list)})
             }, this);
         }
     },

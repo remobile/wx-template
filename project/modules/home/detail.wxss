@@ -1,7 +1,3 @@
-.list {
-    display: flex;
-    flex-direction: column;
-}
 .item {
     padding-left: 30rpx;
     padding-right: 30rpx;
@@ -25,6 +21,10 @@
     font-size: 30rpx;
     color: #878787;
 }
+.image {
+    margin-top: 20rpx;
+    width: 100%;
+}
 .statusContainer {
     display: flex;
     flex-direction: row;
@@ -36,6 +36,56 @@
 }
 .sperator {
     height: 20rpx;
+    background-color: #E5E5E5;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+.commentList {
+    display: flex;
+    flex-direction: column;
+}
+.commentItem {
+    display: flex;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 20rpx;
+    flex-direction: row;
+}
+.commentAvatarContainer {
+    display: flex;
+    width: 72rpx;
+    margin-right: 20rpx;
+}
+.commentAvatar {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+}
+.commentRightContainer {
+    width: 100%;
+}
+.commentNameContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.commentReplayer {
+    font-size: 25rpx;
+    color: #8B7767;
+}
+.commentReport {
+    font-size: 25rpx;
+    color: #C4C4C4;
+}
+.commentReplayContainer {
+    padding-top: 20rpx;
+}
+.commentReplay {
+    font-size: 30rpx;
+    color: #313131;
+}
+.commentSperator {
+    height: 2rpx;
     background-color: #E5E5E5;
     margin-top: 20rpx;
     margin-bottom: 20rpx;

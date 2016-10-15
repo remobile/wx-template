@@ -1,3 +1,34 @@
-<view class="autorContainer">
-    <text class="author">这是详情{{id}}</text>
+<loading hidden="{{!loading}}">
+  加载中...
+</loading>
+<view class="item">
+    <view class="autorContainer">
+        <image class="avatar" src="{{avatar}}" background-size="cover"></image>
+        <text class="author">{{author}}</text>
+    </view>
+    <text class="content">{{content}}</text>
+    <image class="image" src="{{image}}" style="display:{{image?'block':'none'}}" background-size="cover"></image>
+    <view class="statusContainer">
+        <text class="status">好笑 {{likes}} · 评论 {{comments}}</text>
+    </view>
 </view>
+<view class="sperator" />
+<view class="commentList">
+    <block wx:for="{{comments_list}}" wx:for-item="item">
+        <view class="commentItem">
+            <view class="commentAvatarContainer">
+                <image class="commentAvatar" src="{{item.avatar}}" background-size="cover"></image>
+            </view>
+            <view class="commentRightContainer">
+                <view class="commentNameContainer">
+                    <text class="commentReplayer">{{item.replayer}}</text>
+                    <text class="commentReport">{{item.report}}</text>
+                </view>
+                <view class="commentReplayContainer">
+                    <text class="commentReplay">{{item.replay}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="commentSperator" />
+    </block>
+ </view>

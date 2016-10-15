@@ -18,11 +18,20 @@ Page({
     pullUpLoad: function (e) {
         this.getList();
     },
+    onRowClick(e) {
+        var {index} = e.currentTarget.dataset;
+        app.navigator.push({
+            url: './detail',
+            passProps: {
+                data: this.data.list[index],
+            }
+        });
+    },
     getList() {
         if (!this.data.loading) {
             const param = {type: 'text', page: ++this.page};
-            app.GET('http://localhost:3000/getList', param, (data)=>{
-                this.setData({list: this.data.list.concat(data.list)})
+            app.GET('http://localhost:3000/getList', param, (list)=>{
+                this.setData({list: this.data.list.concat(list)})
             }, this);
         }
     },
