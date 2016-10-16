@@ -1,0 +1,37 @@
+.list {
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 120rpx;
+}
+.rowHead {
+    display: flex;
+    flex: 1;
+}
+.point {
+    width: 40rpx;
+    height: 40rpx;
+}
+.content {
+    font-size: 30rpx;
+    color: #878787;
+    margin-left: 20rpx;
+}
+.arrow {
+    width: 20rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+.sperator {
+    height: 2rpx;
+    background-color: #E5E5E5;
+}

@@ -5,7 +5,7 @@ class Manager {
                 wx.getUserInfo({
                     success: (res)=>{
                         this.info = res.userInfo;
-                        callback(this.info);
+                        callback && callback(this.info);
                     }
                 })
             }

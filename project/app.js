@@ -14,6 +14,7 @@ Object.assign(global, {
 const CONSTANTS = require('./config/Constants.js');
 const Route = require('./config/Route.js');
 const GET = require('./utils/net/get.js');
+const utils = require('./utils/common/index.js');
 const lodash = require('./thirdparty/lodash/lodash.js');
 const moment = require('./thirdparty/moment/moment.js');
 const PersonalMgr = require('./manager/PersonalMgr.js');
@@ -92,7 +93,9 @@ App({
     onLaunch() {
         this._ = lodash;
         this.moment = moment;
-        this.personal:new PersonalMgr();
+        this.utils = utils;
+        this.personal = new PersonalMgr();
+        this.personal.login();
         wx.getSystemInfo({
             success: (res) => {
                 this.system = res;

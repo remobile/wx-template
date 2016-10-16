@@ -1,11 +1,12 @@
 {
     "pages": [
-        "modules/test/toast",
+        "modules/home/test",
         "modules/home/hot",
         "modules/home/text",
         "modules/home/image",
         "modules/home/detail",
-        "modules/home/personal"
+        "modules/test/personal",
+        "modules/test/toast"
     ],
     "window": {
         "navigationBarBackgroundColor": "#000000",
@@ -21,6 +22,12 @@
         "backgroundColor": "#CACACA",
         "borderStyle": "#FFFFFF",
         "list": [
+            {
+                "pagePath": "modules/home/test",
+                "text": "模块",
+                "iconPath": "resource/images/icons/learn.png",
+                "selectedIconPath": "resource/images/icons/learn_press.png"
+            },
             {
                 "pagePath": "modules/home/hot",
                 "text": "热门",
@@ -38,12 +45,6 @@
                 "text": "图片",
                 "iconPath": "resource/images/icons/actual.png",
                 "selectedIconPath": "resource/images/icons/actual_press.png"
-            },
-            {
-                "pagePath": "modules/home/personal",
-                "text": "我",
-                "iconPath": "resource/images/icons/learn.png",
-                "selectedIconPath": "resource/images/icons/learn_press.png"
             }
         ]
     },

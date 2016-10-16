@@ -1,0 +1,12 @@
+<navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="onRowClick" data-index="{{index}}">
+    <view class="item">
+        <view class="row">
+            <view class="rowHead">
+                <image class="point" src="../../resource/images/common/point.png" background-size="cover"></image>
+                <text class="content">{{item.title}}</text>
+            </view>
+            <image class="arrow" src="../../resource/images/common/go.png" background-size="cover"></image>
+        </view>
+        <view class="sperator" />
+    </view>
+</navigator>
