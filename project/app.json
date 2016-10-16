@@ -1,5 +1,6 @@
 {
     "pages": [
+        "modules/test/toast",
         "modules/home/hot",
         "modules/home/text",
         "modules/home/image",

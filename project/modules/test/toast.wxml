@@ -1,7 +1,6 @@
 <include src="../../components/toast.wxml"/>
 <view class="container">
     <view class="infoContainer">
-        <button bindtap="{{onPress}}">button</button>
-        <text>{{count}}</text>
+        <button bindtap="onPress">button</button>
     </view>
 </view>
