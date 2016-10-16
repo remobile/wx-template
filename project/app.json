@@ -1,5 +1,6 @@
 {
     "pages": [
+        "modules/test/button",
         "modules/home/hot",
         "modules/home/text",
         "modules/home/image",

@@ -1,9 +1,13 @@
-const PersonalMgr = require('./manager/PersonalMgr.js');
+const CONSTANTS = require('./config/Constants.js');
+const Route = require('./config/Route.js');
 const GET = require('./utils/net/get.js');
+const PersonalMgr = require('./manager/PersonalMgr.js');
 
 App({
     data: {},
+    CONSTANTS: CONSTANTS,
     GET: GET,
+    route: Route,
     personal:new PersonalMgr(),
     Page(...params) {
         let data = {};
@@ -50,9 +54,6 @@ App({
         getParentRoute(i=1) {
             return this.routeStack[this.routeStack.length-1-i];
         },
-    },
-    Toast(msg) {
-        console.log(msg);
     },
     onLaunch() {
         wx.getSystemInfo({

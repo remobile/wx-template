@@ -31,7 +31,7 @@ module.exports = function(type) {
         getList() {
             if (!this.data.loading) {
                 const param = {type, page: ++this.page};
-                app.GET('http://localhost:3000/getList', param, (list)=>{
+                app.GET(app.route.ROUTE_GET_LIST, param, (list)=>{
                     this.setData({list: this.data.list.concat(list)})
                 }, this);
             }
