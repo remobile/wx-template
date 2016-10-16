@@ -8,7 +8,6 @@
 }
 .row {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 120rpx;
