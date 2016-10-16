@@ -1,6 +1,21 @@
+Object.assign(global, {
+  Array: Array,
+  Date: Date,
+  Error: Error,
+  Function: Function,
+  Math: Math,
+  Object: Object,
+  Number: Number,
+  RegExp: RegExp,
+  String: String,
+  TypeError: TypeError,
+});
+
 const CONSTANTS = require('./config/Constants.js');
 const Route = require('./config/Route.js');
 const GET = require('./utils/net/get.js');
+const lodash = require('./thirdparty/lodash/lodash.js');
+const moment = require('./thirdparty/moment/moment.js');
 const PersonalMgr = require('./manager/PersonalMgr.js');
 
 App({
@@ -8,7 +23,6 @@ App({
     CONSTANTS: CONSTANTS,
     GET: GET,
     route: Route,
-    personal:new PersonalMgr(),
     Page(...params) {
         let data = {};
         let options = {};
@@ -76,6 +90,9 @@ App({
         },
     },
     onLaunch() {
+        this._ = lodash;
+        this.moment = moment;
+        this.personal:new PersonalMgr();
         wx.getSystemInfo({
             success: (res) => {
                 this.system = res;
