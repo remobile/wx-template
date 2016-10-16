@@ -16,7 +16,7 @@ App({
             Object.assign(options, v);
             Object.assign(data, v.data);
         });
-        if (!options.fromTabBar) {
+        if (!options.tabbar) {
             const {onLoad, onUnload} = options;
             options.onLoad = function() {
                 var app = getApp();
@@ -29,10 +29,24 @@ App({
                 onUnload && onUnload.bind(this)();
                 app.navigator.routeStack.pop();
             };
+        } else {
+            const {onShow, onLoad} = options;
+            options.onLoad = function() {
+                var app = getApp();
+                app.navigator.tabbarRouteStack.push(this);
+                onLoad && onLoad.bind(this)();
+            };
+            options.onShow = function() {
+                var app = getApp();
+                app.navigator.routeStack[0] = this;
+                onShow && onShow.bind(this)();
+            };
         }
         return Page(options);
     },
     navigator: {
+        routeStack: [],
+        tabbarRouteStack: [],
         push(obj) {
             getApp().passProps = obj.passProps;
             wx.navigateTo({url: obj.url});
@@ -44,8 +58,7 @@ App({
         pop() {
             wx.navigateBack();
         },
-        routeStack: [],
-        getCurrentRoutes() {
+        getRoutes() {
             return this.routeStack;
         },
         getCurrentRoute() {
@@ -53,6 +66,13 @@ App({
         },
         getParentRoute(i=1) {
             return this.routeStack[this.routeStack.length-1-i];
+        },
+        getTabbarRoute(name) {
+            for (var i in this.tabbarRouteStack) {
+                if (this.tabbarRouteStack[i].tabbar === name) {
+                    return this.tabbarRouteStack[i];
+                }
+            }
         },
     },
     onLaunch() {

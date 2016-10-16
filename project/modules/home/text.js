@@ -1,3 +1,3 @@
 var app = getApp();
 var list = require('components/list.js');
-app.Page({fromTabBar: true}, list('text'));
+app.Page({tabbar: 'text'}, list('text'));

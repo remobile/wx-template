@@ -1,5 +1,5 @@
 var app = getApp();
-Page({
+app.Page({tabbar: 'personal'}, {
     data: {
         avatar: '',
         username: '',
