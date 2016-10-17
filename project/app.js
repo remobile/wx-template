@@ -1,22 +1,26 @@
+var {EventEmitter} = require('thirdparty/fbemitter/index.js');
+const moment = require('./thirdparty/moment/moment.js');
+const utils = require('./utils/common/index.js');
 Object.assign(global, {
-  Array: Array,
-  Date: Date,
-  Error: Error,
-  Function: Function,
-  Math: Math,
-  Object: Object,
-  Number: Number,
-  RegExp: RegExp,
-  String: String,
-  TypeError: TypeError,
+    Array,
+    Date,
+    Error,
+    Function,
+    Math,
+    Object,
+    Number,
+    RegExp,
+    String,
+    TypeError,
+    EventEmitter,
+    moment,
+    utils,
 });
+global._ = require('./thirdparty/lodash/lodash.js');
 
 const CONSTANTS = require('./config/Constants.js');
 const Route = require('./config/Route.js');
 const GET = require('./utils/net/get.js');
-const utils = require('./utils/common/index.js');
-const lodash = require('./thirdparty/lodash/lodash.js');
-const moment = require('./thirdparty/moment/moment.js');
 const PersonalMgr = require('./manager/PersonalMgr.js');
 
 App({
@@ -91,9 +95,6 @@ App({
         },
     },
     onLaunch() {
-        this._ = lodash;
-        this.moment = moment;
-        this.utils = utils;
         this.personal = new PersonalMgr();
         this.personal.login();
         wx.getSystemInfo({

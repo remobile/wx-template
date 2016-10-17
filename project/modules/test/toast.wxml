@@ -1,4 +1,7 @@
 <include src="../../components/toast.wxml"/>
 <view class="container">
-    <button bindtap="onPress">button</button>
+    <button bindtap="onTestToast">Toast</button>
+    <button bindtap="onTestLodash">lodash</button>
+    <button bindtap="onTestMoment">moment</button>
+    <button bindtap="onTestEvent">event</button>
 </view>

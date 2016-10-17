@@ -1,4 +1,9 @@
+var {EventEmitter} = global;
+
 class Manager {
+    constructor() {
+        this.event = new EventEmitter();
+    }
     login(callback) {
         wx.login({
             success: ()=>{
@@ -10,6 +15,9 @@ class Manager {
                 })
             }
         })
+    }
+    updateHead(url) {
+        this.event.emit('USER_HEAD_CHANGE_EVENT', {url:url});
     }
 }
 
