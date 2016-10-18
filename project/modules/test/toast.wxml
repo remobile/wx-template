@@ -1,5 +1,6 @@
-<include src="../../components/toast.wxml"/>
-<view class="container">
+<include src="../../components/common.wxml"/>
+<view class="container" style="height: {{sh}};">
+    <button  bindtap="onTestWait">Wait</button>
     <button bindtap="onTestToast">Toast</button>
     <button bindtap="onTestLodash">lodash</button>
     <button bindtap="onTestMoment">moment</button>

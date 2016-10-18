@@ -1,3 +1,6 @@
+<loading hidden="{{!loading}}">
+    加载中...
+</loading>
 <toast hidden="{{!toastIsShowing}}">
     {{toastText}}
 </toast>

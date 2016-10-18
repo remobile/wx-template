@@ -30,15 +30,33 @@ App({
     route: Route,
     Page(...params) {
         let data = {};
-        let options = {};
+        let options = {
+            showWaiting() {
+                this.setData({loading: true});
+            },
+            hideWaiting() {
+                this.setData({loading: false});
+            },
+            Toast(text, duration=3000) {
+                this.setData({toastIsShowing: true, toastText: text});
+                setTimeout(()=>{
+                    this.setData({toastIsShowing: false});
+                }, duration)
+            },
+        };
         params.forEach((v)=>{
             Object.assign(options, v);
             Object.assign(data, v.data);
         });
+        options.data = data;
         if (!options.tabbar) {
             const {onLoad, onUnload} = options;
             options.onLoad = function() {
                 var app = getApp();
+                this.setData({
+                    sw: app.system.windowWidth+'px',
+                    sh: app.system.windowHeight+'px',
+                });
                 this.props = app.passProps;
                 app.navigator.routeStack.push(this);
                 onLoad && onLoad.bind(this)();
@@ -57,11 +75,15 @@ App({
             };
             options.onShow = function() {
                 var app = getApp();
+                this.setData({
+                    sw: app.system.windowWidth+'px',
+                    sh: app.system.windowHeight+'px',
+                });
                 app.navigator.routeStack[0] = this;
                 onShow && onShow.bind(this)();
             };
         }
-        return Page(options);
+         Page(options);
     },
     navigator: {
         routeStack: [],
@@ -95,12 +117,12 @@ App({
         },
     },
     onLaunch() {
-        this.personal = new PersonalMgr();
-        this.personal.login();
         wx.getSystemInfo({
             success: (res) => {
                 this.system = res;
             }
         })
+        this.personal = new PersonalMgr();
+        this.personal.login();
     },
 })

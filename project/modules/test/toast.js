@@ -1,11 +1,15 @@
 var app = getApp();
-var toast = require('../../components/toast.js');
 var {moment, _} = global;
-app.Page(toast, {
+app.Page({
     onLoad() {
+        console.log(this.data);
         app.personal.event.addListener('USER_HEAD_CHANGE_EVENT', (info)=>{
             this.Toast(info.url);
         })
+    },
+    onTestWait() {
+        this.showWaiting();
+        setTimeout(this.hideWaiting, 3000);
     },
     onTestToast() {
         this.Toast('fang');

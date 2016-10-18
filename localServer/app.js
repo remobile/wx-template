@@ -78,7 +78,6 @@ app.get('/getCommentList', function(req, res){
     });
 });
 
-
 app.listen(3000, function() {
     console.log("server listen on: http://localhost:3000");
 });

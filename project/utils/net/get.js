@@ -16,7 +16,7 @@ module.exports = (url, param, success, failed, waitPage)=>{
         failed = null;
     }
     if (waitPage) {
-        waitPage.setData({loading: true});
+        waitPage.showWaiting();
     }
     wx.request({
         url: url+'?'+json2Form(param),
@@ -29,15 +29,15 @@ module.exports = (url, param, success, failed, waitPage)=>{
             var data = res.data;
             console.log("recv:", data);
             if (waitPage) {
-                waitPage.setData({loading: false});
+                waitPage.hideWaiting();
             }
             success && success(data);
         }, fail: (error)=>{
             if (!failed || !failed(error)) {
-                waitPage.Toast && waitPage.Toast('网络错误');
+                waitPage.Toast('网络错误');
                 console.log(url+ ":网络错误");
                 if (waitPage) {
-                    waitPage.setData({loading: false});
+                    waitPage.hideWaiting();
                 }
             }
         }
