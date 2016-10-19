@@ -4,7 +4,7 @@ app.Page({
     onLoad() {
         console.log(this.data);
         app.personal.event.addListener('USER_HEAD_CHANGE_EVENT', (info)=>{
-            this.Toast(info.url);
+            this.toast(info.url);
         })
     },
     onTestWait() {
@@ -12,7 +12,7 @@ app.Page({
         setTimeout(this.hideWaiting, 3000);
     },
     onTestToast() {
-        this.Toast('fang');
+        this.toast('fang');
     },
     onTestLodash() {
         console.log(_.random());

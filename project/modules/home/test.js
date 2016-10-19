@@ -3,7 +3,8 @@ app.Page({tabbar: 'test'}, {
     data: {
         list: [
             {title: 'personal', url: '../test/personal'},
-            {title: 'toast', url: '../test/toast'},
+            {title: 'toast', url: '../test/common'},
+            {title: 'video', url: '../test/video'},
         ]
     },
     onRowClick(e) {

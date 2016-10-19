@@ -37,7 +37,7 @@ App({
             hideWaiting() {
                 this.setData({loading: false});
             },
-            Toast(text, duration=3000) {
+            toast(text, duration=3000) {
                 this.setData({toastIsShowing: true, toastText: text});
                 setTimeout(()=>{
                     this.setData({toastIsShowing: false});
@@ -54,8 +54,8 @@ App({
             options.onLoad = function() {
                 var app = getApp();
                 this.setData({
-                    sw: app.system.windowWidth+'px',
-                    sh: app.system.windowHeight+'px',
+                    sw: app.system.windowWidth,
+                    sh: app.system.windowHeight,
                 });
                 this.props = app.passProps;
                 app.navigator.routeStack.push(this);

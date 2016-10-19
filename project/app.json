@@ -1,12 +1,14 @@
 {
     "pages": [
+        "modules/test/video",
         "modules/home/test",
         "modules/home/hot",
         "modules/home/text",
         "modules/home/image",
         "modules/home/detail",
         "modules/test/personal",
-        "modules/test/toast"
+        "modules/test/common",
+        "modules/test/video"
     ],
     "window": {
         "navigationBarBackgroundColor": "#000000",

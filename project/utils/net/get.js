@@ -34,7 +34,7 @@ module.exports = (url, param, success, failed, waitPage)=>{
             success && success(data);
         }, fail: (error)=>{
             if (!failed || !failed(error)) {
-                waitPage.Toast('网络错误');
+                waitPage.toast('网络错误');
                 console.log(url+ ":网络错误");
                 if (waitPage) {
                     waitPage.hideWaiting();
