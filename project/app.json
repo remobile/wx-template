@@ -1,6 +1,6 @@
 {
     "pages": [
-        "modules/test/canvas",
+        "modules/test/swiper",
         "modules/home/test",
         "modules/home/hot",
         "modules/home/text",
@@ -12,6 +12,7 @@
         "modules/test/image",
         "modules/test/audio",
         "modules/test/map",
+        "modules/test/swiper",
         "modules/test/canvas"
     ],
     "window": {
