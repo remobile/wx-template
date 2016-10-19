@@ -1,6 +1,6 @@
 {
     "pages": [
-        "modules/test/video",
+        "modules/test/image",
         "modules/home/test",
         "modules/home/hot",
         "modules/home/text",

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cp video.js $1.js
+cp video.wxml $1.wxml
+cp video.wxss $1.wxss

@@ -4,6 +4,7 @@ app.Page({tabbar: 'test'}, {
         list: [
             {title: 'personal', url: '../test/personal'},
             {title: 'toast', url: '../test/common'},
+            {title: 'image', url: '../test/image'},
             {title: 'video', url: '../test/video'},
         ]
     },
