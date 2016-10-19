@@ -1,0 +1,4 @@
+.video {
+    display: inline;
+    margin-bottom: 20rpx;
+}
