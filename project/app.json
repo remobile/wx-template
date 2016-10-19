@@ -1,6 +1,6 @@
 {
     "pages": [
-        "modules/test/map",
+        "modules/test/canvas",
         "modules/home/test",
         "modules/home/hot",
         "modules/home/text",
@@ -11,7 +11,8 @@
         "modules/test/video",
         "modules/test/image",
         "modules/test/audio",
-        "modules/test/map"
+        "modules/test/map",
+        "modules/test/canvas"
     ],
     "window": {
         "navigationBarBackgroundColor": "#000000",

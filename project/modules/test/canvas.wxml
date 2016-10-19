@@ -1,0 +1,3 @@
+<include src="../../components/common.wxml"/>
+
+<canvas style="width:{{sw}}px; height:{{sw}}px;" canvas-id="firstCanvas"></canvas>
