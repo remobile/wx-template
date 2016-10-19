@@ -1,6 +1,5 @@
 {
     "pages": [
-        "modules/test/swiper",
         "modules/home/test",
         "modules/home/hot",
         "modules/home/text",
@@ -12,8 +11,9 @@
         "modules/test/image",
         "modules/test/audio",
         "modules/test/map",
+        "modules/test/canvas",
         "modules/test/swiper",
-        "modules/test/canvas"
+        "modules/test/picker"
     ],
     "window": {
         "navigationBarBackgroundColor": "#000000",

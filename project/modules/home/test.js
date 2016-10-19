@@ -6,6 +6,11 @@ app.Page({tabbar: 'test'}, {
             {title: 'toast', url: '../test/common'},
             {title: 'image', url: '../test/image'},
             {title: 'video', url: '../test/video'},
+            {title: 'audio', url: '../test/audio'},
+            {title: 'map', url: '../test/map'},
+            {title: 'canvas', url: '../test/canvas'},
+            {title: 'swiper', url: '../test/swiper'},
+            {title: 'picker', url: '../test/picker'},
         ]
     },
     onRowClick(e) {
