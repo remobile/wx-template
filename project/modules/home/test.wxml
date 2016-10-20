@@ -1,3 +1,4 @@
+<include src="../../components/common.wxml"/>
 <view class="list">
     <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="onRowClick" data-index="{{index}}">
         <view class="item">

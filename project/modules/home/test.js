@@ -3,7 +3,7 @@ app.Page({tabbar: 'test'}, {
     data: {
         list: [
             {title: 'personal', url: '../test/personal'},
-            {title: 'toast', url: '../test/common'},
+            {title: 'common', url: '../test/common'},
             {title: 'image', url: '../test/image'},
             {title: 'video', url: '../test/video'},
             {title: 'audio', url: '../test/audio'},
@@ -17,7 +17,8 @@ app.Page({tabbar: 'test'}, {
         var {index} = e.currentTarget.dataset;
         var item = this.data.list[index];
         app.navigator.push({
-            url: item.url
+            url: item.url,
+            title: item.title,
         });
     },
 })

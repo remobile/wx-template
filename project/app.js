@@ -24,6 +24,7 @@ const GET = require('./utils/net/get.js');
 const PersonalMgr = require('./manager/PersonalMgr.js');
 
 App({
+    appName: '糗事百科',
     data: {},
     CONSTANTS: CONSTANTS,
     GET: GET,
@@ -49,17 +50,30 @@ App({
             Object.assign(data, v.data);
         });
         options.data = data;
+
         if (!options.tabbar) {
-            const {onLoad, onUnload} = options;
+            const {onLoad, onReady, onShow, onUnload} = options;
             options.onLoad = function() {
                 var app = getApp();
                 this.setData({
                     sw: app.system.windowWidth,
                     sh: app.system.windowHeight,
                 });
-                this.props = app.passProps;
+                this.props = app.passProps||{};
                 app.navigator.routeStack.push(this);
                 onLoad && onLoad.bind(this)();
+            };
+            options.onReady = function() {
+                var app = getApp();
+                this.shownTitle = app.passTitle || options.title || app.appName;
+                wx.setNavigationBarTitle({title: this.shownTitle});
+                onReady && onReady.bind(this)();
+            };
+            options.onShow = function() {
+                if (this.shownTitle) {
+                    wx.setNavigationBarTitle({title: this.shownTitle});
+                }
+                onShow && onShow.bind(this)();
             };
             options.onUnload = function() {
                 var app = getApp();
@@ -67,33 +81,44 @@ App({
                 app.navigator.routeStack.pop();
             };
         } else {
-            const {onShow, onLoad} = options;
+            const {onLoad, onReady, onShow} = options;
             options.onLoad = function() {
                 var app = getApp();
                 app.navigator.tabbarRouteStack.push(this);
                 onLoad && onLoad.bind(this)();
             };
+            options.onReady = function() {
+                this.shownTitle = options.title || getApp().appName;
+                wx.setNavigationBarTitle({title: this.shownTitle});
+                onReady && onReady.bind(this)();
+            };
             options.onShow = function() {
                 var app = getApp();
                 this.setData({
-                    sw: app.system.windowWidth+'px',
-                    sh: app.system.windowHeight+'px',
+                    sw: app.system.windowWidth,
+                    sh: app.system.windowHeight,
                 });
                 app.navigator.routeStack[0] = this;
+                if (this.shownTitle) {
+                    wx.setNavigationBarTitle({title: this.shownTitle});
+                }
                 onShow && onShow.bind(this)();
             };
         }
-         Page(options);
+        // console.log("options:", options);
+        Page(options);
     },
     navigator: {
         routeStack: [],
         tabbarRouteStack: [],
         push(obj) {
             getApp().passProps = obj.passProps;
+            getApp().passTitle = obj.title;
             wx.navigateTo({url: obj.url});
         },
         replace() {
             getApp().passProps = obj.passProps;
+            getApp().passTitle = obj.title;
             wx.redirectTo({url: obj.url});
         },
         pop() {

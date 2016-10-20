@@ -18,7 +18,6 @@
     "window": {
         "navigationBarBackgroundColor": "#000000",
         "navigationBarTextStyle": "white",
-        "navigationBarTitleText": "糗事百科",
         "backgroundColor": "white",
         "backgroundTextStyle": "dark",
         "enablePullDownRefresh": false

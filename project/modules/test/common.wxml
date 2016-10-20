@@ -5,4 +5,5 @@
     <button bindtap="onTestLodash">lodash</button>
     <button bindtap="onTestMoment">moment</button>
     <button bindtap="onTestEvent">event</button>
+    <button bindtap="onShowVideo">测试title传递</button>
 </view>

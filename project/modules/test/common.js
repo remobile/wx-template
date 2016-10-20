@@ -1,8 +1,8 @@
 var app = getApp();
 var {moment, _} = global;
 app.Page({
+    title: 'fang',
     onLoad() {
-        console.log(this.data);
         app.personal.event.addListener('USER_HEAD_CHANGE_EVENT', (info)=>{
             this.toast(info.url);
         })
@@ -22,5 +22,11 @@ app.Page({
     },
     onTestEvent() {
         app.personal.updateHead('http://localhost:3000/1.png');
+    },
+    onShowVideo() {
+        app.navigator.push({
+            url: 'video',
+            title: '视频',
+        });
     },
 })
