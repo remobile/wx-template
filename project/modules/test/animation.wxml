@@ -1,0 +1,2 @@
+<view class="container" animation="{{animationData}}"></view>
+<button class="button" bindtap="onStart">start</button>

@@ -13,6 +13,7 @@
         "modules/test/map",
         "modules/test/canvas",
         "modules/test/swiper",
+        "modules/test/animation",
         "modules/test/picker"
     ],
     "window": {

@@ -11,6 +11,7 @@ app.Page({tabbar: 'test'}, {
             {title: 'canvas', url: '../test/canvas'},
             {title: 'swiper', url: '../test/swiper'},
             {title: 'picker', url: '../test/picker'},
+            {title: 'animation', url: '../test/animation'},
         ]
     },
     onRowClick(e) {
