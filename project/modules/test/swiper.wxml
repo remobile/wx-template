@@ -1,14 +1,17 @@
 <include src="../../components/common.wxml"/>
-
-<swpier indicator-dots="{{indicatorDots}}"
-    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for-items="{{imgUrls}}">
-        <swpier-item>
-            <image src="{{item}}" class="slide-image" background-size="cover" width="{{sw}}" height="{{sw*2/3}}"/>
-        </swpier-item>
-    </block>
-</swpier>
+<swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{sw*2/3}}px">
+    <swiper-item>
+        <image src="{{imgUrls[0]}}" background-size="cover" style="width:{{sw}}px; height:{{sw*2/3}}px"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="{{imgUrls[1]}}" background-size="cover" style="width:{{sw}}px; height:{{sw*2/3}}px"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="{{imgUrls[2]}}" background-size="cover" style="width:{{sw}}px; height:{{sw*2/3}}px"/>
+    </swiper-item>
+</swiper>
 <button bindtap="changeIndicatorDots"> indicator-dots </button>
 <button bindtap="changeAutoplay"> autoplay </button>
+<button type="default" bindtap="changeVertical">{{vertical?'horizontal':'vertical'}}</button>
 <slider bindchange="intervalChange" show-value min="500" max="2000"/> interval
 <slider bindchange="durationChange" show-value min="1000" max="10000"/> duration

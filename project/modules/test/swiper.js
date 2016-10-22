@@ -6,27 +6,33 @@ app.Page({
             '../../resource/images/common/test.jpg',
             '../../resource/images/common/test.jpg'
         ],
-        indicatorDots: false,
+        indicatorDots: true,
+        vertical: false,
         autoplay: false,
-        interval: 5000,
+        interval: 3000,
         duration: 1000
     },
-    changeIndicatorDots: function(e) {
+    changeIndicatorDots: function (e) {
         this.setData({
             indicatorDots: !this.data.indicatorDots
         })
     },
-    changeAutoplay: function(e) {
+    changeVertical: function (e) {
+        this.setData({
+            vertical: !this.data.vertical
+        })
+    },
+    changeAutoplay: function (e) {
         this.setData({
             autoplay: !this.data.autoplay
         })
     },
-    intervalChange: function(e) {
+    intervalChange: function (e) {
         this.setData({
             interval: e.detail.value
         })
     },
-    durationChange: function(e) {
+    durationChange: function (e) {
         this.setData({
             duration: e.detail.value
         })
