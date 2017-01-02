@@ -1,6 +1,6 @@
 <include src="../../components/common.wxml"/>
 <view class="list">
-    <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="onRowClick" data-index="{{index}}">
+    <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="list" bindtap="onRowClick" data-index="{{index}}">
         <view class="item">
             <view class="row">
                 <view class="rowHead">

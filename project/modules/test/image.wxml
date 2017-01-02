@@ -1,6 +1,6 @@
 <include src="../../components/common.wxml"/>
 
-<view class="list" wx:for-items="{{array}}" wx:for-item="item">
+<view class="list" wx:for-items="{{array}}" wx:for-item="item" wx:key="list">
     <view class="title">{{item.text}}</view>
     <image style="width: {{sw}}px; height: {{sw}}px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
 </view>

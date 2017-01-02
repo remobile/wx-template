@@ -4,7 +4,7 @@
 </loading>
 <template is="content" data="{{item: item}}"/>
 <view class="commentList">
-    <block wx:for="{{comments_list}}" wx:for-item="item">
+    <block wx:for="{{comments_list}}" wx:for-item="item" wx:key="comments_list">
         <view class="commentItem">
             <view class="commentAvatarContainer">
                 <image class="commentAvatar" src="{{item.avatar}}" background-size="cover"></image>

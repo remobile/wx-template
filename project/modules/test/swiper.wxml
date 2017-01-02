@@ -1,7 +1,7 @@
 <include src="../../components/common.wxml"/>
 <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:{{sw}}px; height:{{sw*2/3}}px;">
-    <block wx:for-items="{{imgUrls}}">
+    <block wx:for-items="{{imgUrls}}" wx:key="urls">
         <swiper-item>
             <image src="{{item}}" background-size="cover" style="width:{{sw}}px; height:{{sw*2/3}}px"/>
         </swiper-item>
