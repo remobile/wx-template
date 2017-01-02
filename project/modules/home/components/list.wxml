@@ -1,8 +1,8 @@
 <import src="content.wxml"/>
 <template name="list">
     <scroll-view class="list" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltolower="pullUpLoad" lower-threshold="200">
-        <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="list" bindtap="onRowClick" data-index="{{index}}">
+        <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="list" bindtap="onRowClick" data-index="{{index}}"  hover hover-class="hover">
             <template is="content" data="{{item: item}}"/>
-        </navigator>
+        </view>
     </scroll-view>
 </template>

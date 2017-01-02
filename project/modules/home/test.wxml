@@ -1,6 +1,6 @@
 <include src="../../components/common.wxml"/>
 <view class="list">
-    <navigator wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="list" bindtap="onRowClick" data-index="{{index}}">
+    <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="list" bindtap="onRowClick" data-index="{{index}}" hover hover-class="hover">
         <view class="item">
             <view class="row">
                 <view class="rowHead">
@@ -11,5 +11,5 @@
             </view>
             <view class="sperator" />
         </view>
-    </navigator>
+    </view>
 </view>
