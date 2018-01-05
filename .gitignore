@@ -8,4 +8,5 @@
 /**/.svn
 /tools/node
 *.idea
+package-lock.json
 node_modules

@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var jsdom = require("jsdom");
+var jsdom = require("jsdom/lib/old-api");
 var jquery = require('fs').readFileSync('./utils/jquery.js').toString();
 var fs = require('fs');
 var app = express();
@@ -28,7 +28,7 @@ function getList(type, page, callback) {
                 var content =  $(this).find('.contentHerf');
                 item.avatar = authorImg.attr('src');
                 item.author = authorImg.attr('alt');
-                item.content =  content.find('span').html();
+                item.content =  content.find('span').html().replace(/\n/g, '');
                 item.id =  content.attr('href').replace(/.*\//, '');
                 item.likes =  $(this).find('.stats-vote .number').html();
                 item.comments =  $(this).find('.qiushi_comments .number').html();
@@ -41,7 +41,9 @@ function getList(type, page, callback) {
 }
 app.get('/getList', function(req, res){
     const {type, page} = req.query;
+    console.log('/getList', req.query);
     getList(type, page, function(list) {
+        console.log("send:", list);
         res.send(list);
     });
 });
@@ -73,7 +75,9 @@ function getCommentList(id, callback) {
 }
 app.get('/getCommentList', function(req, res){
     const {id} = req.query;
+    console.log('/getCommentList', req.query);
     getCommentList(id, function(list) {
+        console.log("send:", list);
         res.send(list);
     });
 });
